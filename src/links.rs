@@ -1,4 +1,4 @@
-// linksnap/src/links.rs
+// oneweb/src/links.rs
 
 use std::collections::HashMap;
 use serde_derive::{Serialize, Deserialize};

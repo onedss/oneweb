@@ -1,4 +1,4 @@
-// linksnap/src/state.rs
+// oneweb/src/state.rs
 
 use actix::Actor;
 use actix::SyncContext;

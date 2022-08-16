@@ -1,4 +1,4 @@
-// linksnap/src/main.rs
+// oneweb/src/main.rs
 
 mod links;
 mod route_handlers;
@@ -12,15 +12,15 @@ use actix_web::middleware::Logger;
 use actix_web::{http, server, App};
 
 fn init_env() {
-    env::set_var("RUST_LOG", "linksnap=info");
+    env::set_var("RUST_LOG", "oneweb=info");
     env::set_var("RUST_BACKTRACE", "1");
     env_logger::init();
-    info!("Starting http server: 127.0.0.1:8080");
+    info!("Starting http server: 0.0.0.0:8080");
 }
 
 fn main() {
     init_env();
-    let system = actix::System::new("linksnap");
+    let system = actix::System::new("oneweb");
     let state = State::init();
 
     let web_app = move || {
@@ -32,6 +32,6 @@ fn main() {
             .route("/rm", http::Method::DELETE, rm_link)
     };
 
-    server::new(web_app).bind("127.0.0.1:8080").unwrap().start();
+    server::new(web_app).bind("0.0.0.0:8080").unwrap().start();
     let _ = system.run();
 }

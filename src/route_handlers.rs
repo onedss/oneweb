@@ -1,4 +1,4 @@
-// linksnap/src/route_handlers.rs
+// oneweb/src/route_handlers.rs
 
 use actix_web::{Error, HttpRequest, HttpResponse};
 
@@ -19,7 +19,7 @@ macro_rules! server_err {
 }
 
 pub fn index(_req: HttpRequest<State>) -> HttpResponse {
-    HttpResponse::from("Welcome to Linksnap API server")
+    HttpResponse::from("Welcome to oneweb API server")
 }
 
 pub fn add_link(req: HttpRequest<State>) -> ResponseFuture {
